@@ -1,0 +1,16 @@
+# Python/Django
+__pycache__/
+*.py[cod]
+*.sqlite3
+/media/
+/staticfiles/
+
+# Env
+.env
+.env.local
+
+# Docker
+docker-compose.override.yml
+
+# VSCode
+.vscode/
