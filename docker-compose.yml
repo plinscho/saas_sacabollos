@@ -38,5 +38,20 @@ services:
       db:
         condition: service_healthy
 
+  frontend:
+    build:
+      context: ./sacabollos_web_front
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./sacabollos_web_front:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    command: npm run dev
+    depends_on:
+      - web
+
 volumes:
   db_data:

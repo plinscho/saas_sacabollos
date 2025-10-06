@@ -32,12 +32,23 @@ ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '*').split(',') if os.environ.ge
 # Application definition
 
 INSTALLED_APPS = [
+	'users',
+    'chapista_profile',
+    'company_profile',
+    'locations',
+    'job_offer',
+    'job_proposal',
+    'job_contract',
+    'job_review',
+    'portfolio_item',
+    'photo',
+    'transaction',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles'
 ]
 
 MIDDLEWARE = [

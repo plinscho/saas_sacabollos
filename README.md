@@ -1,8 +1,47 @@
-# Objetivo MVP
+# SacaBollos.eu - Plataforma de Reparación de Abollones
+
+Una plataforma moderna para conectar profesionales y empresas especializadas en reparación de abollones en Europa.
+
+## 🚀 Objetivo MVP Original
 
 - Permitir que chapistas autónomos creen perfil y portafolio.
 - Permitir que empresas creen ofertas de trabajo (localización, tiempo estimado, presupuesto).
 - Permitir que chapistas presenten propuestas (presupuesto / plazo) a ofertas.
+
+## 🎯 MVP Mejorado (basado en análisis de dentrepair.com)
+
+- **Mapa interactivo** con zoom jerárquico (país → región → provincia → ciudad)
+- **Búsqueda y filtros** avanzados por ubicación, tipo y especialidades
+- **Perfiles profesionales** con información detallada y valoraciones
+- **Sistema de contacto** directo sin intermediarios
+- **UX moderna** superior a la competencia estadounidense
+
+## 🛠 Stack Tecnológico
+
+### Backend
+- **Django 4.2** + Django REST Framework
+- **MySQL 8.0** con soporte geoespacial
+- **Docker** para desarrollo y despliegue
+
+### Frontend  
+- **Next.js 15** + TypeScript
+- **Tailwind CSS** para estilos
+- **Leaflet** para mapas interactivos
+- **Lucide React** para iconos
+
+## 🏃‍♂️ Desarrollo Rápido
+
+```bash
+# Iniciar todos los servicios
+make build && make up
+
+# Desarrollo local
+make dev
+
+# URLs
+# Frontend: http://localhost:3000
+# Backend: http://localhost:8000
+```
 
 ---
 
@@ -18,7 +57,7 @@
 
 ---
 
-## Apps Backend Recomendadas
+## Apps Backend
 
 - **users**: autenticación, roles, datos básicos de usuario (ya presente)
 - **profiles**: perfiles extendidos para chapistas y empresas
@@ -71,7 +110,7 @@
 - `file_path/url`, `portfolio_item` (FK nullable), `uploaded_at`, `meta`
 
 ### Review
-- `job` (FK), `from_user` (FK), `to_user` (FK), `rating` (int 1..5), `comment`, `created_at`
+- `job` (FK), `from_user` (FK), `to_user` (FK), `rating` (1..5), `comment`, `created_at`
 
 ### Booking/Work
 - `job`, `chapista`, `company`, `agreed_price`, `agreed_time`, `status` (in_progress, finished)
