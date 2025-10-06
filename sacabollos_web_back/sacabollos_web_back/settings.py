@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'photo',
     'transaction',
     'rest_framework',
+    'rest_framework.authtoken',
     'drf_spectacular'
 ]
 
@@ -87,7 +88,14 @@ WSGI_APPLICATION = 'sacabollos_web_back.wsgi.application'
 # REST FRAMEWORK ----
 
 REST_FRAMEWORK = {
-    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema'
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
 }
 
 SPECTACULAR_SETTINGS = {
