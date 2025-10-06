@@ -32,6 +32,12 @@ ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '*').split(',') if os.environ.ge
 # Application definition
 
 INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
 	'users',
     'chapista_profile',
     'company_profile',
@@ -43,12 +49,8 @@ INSTALLED_APPS = [
     'portfolio_item',
     'photo',
     'transaction',
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles'
+    'rest_framework',
+    'drf_spectacular'
 ]
 
 MIDDLEWARE = [
@@ -81,6 +83,18 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'sacabollos_web_back.wsgi.application'
 
+
+# REST FRAMEWORK ----
+
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema'
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'SB_BACK_API',
+    'DESCRIPTION': 'Documentation for API endpoints',
+    'VERSION': '1.0.0'
+}
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases

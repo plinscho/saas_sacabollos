@@ -5,6 +5,7 @@ build:
 
 ps:
 	$(COMPOSE) ps
+
 up:
 	$(COMPOSE) up -d --remove-orphans
 
@@ -13,6 +14,9 @@ down:
 
 migrate:
 	$(COMPOSE) run --rm web python manage.py migrate
+
+superuser:
+	$(COMPOSE) exec web python manage.py createsuperuser
 
 logs:
 	$(COMPOSE) logs -f
